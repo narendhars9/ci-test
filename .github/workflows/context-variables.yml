@@ -33,4 +33,4 @@ jobs:
           echo " Github repository ${{github.repository}} "
           echo " Repository owner ${{github.repository_owner}} "
           echo " workflow name ${{github.workflow}} "
-          echo " "Triggered by ${{github.triggering_actor}} "
+          echo " Triggered by ${{github.triggering_actor}} "
