@@ -27,6 +27,6 @@ jobs:
     steps:
       - name: "Say Hello to Everyone"
         shell: bash
-        run: echo " Hi $first_Name $Greetings we are using $cloud and configuration variable project id is ${{PROJECT_ID}}"
+        run: echo " Hi $first_Name $Greetings we are using $cloud and configuration variable project id is ${{vars.PROJECT_ID}}"
         env:
           first_name: Narendhar
