@@ -27,9 +27,7 @@ jobs:
     steps:
       - name: "Say Hello to Everyone"
         shell: bash
-        run: echo "$Greetings is using $cloud and $first_Name"
+        run: echo "$Greetings is using $cloud and $first_name"
         env:
           first_name: Narendhar
 
-      - name: "Say step - 2"
-        run: echo "$first_name here"
