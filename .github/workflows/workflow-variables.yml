@@ -16,7 +16,6 @@ env:
 
 jobs:
   greeting_job:
-  build:
     #runs-on: ubuntu-latest
     runs-on: ${{ matrix.os }}
     strategy: 
