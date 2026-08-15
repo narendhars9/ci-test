@@ -33,10 +33,12 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
+# run: echo "{name}={value}" >> $GITHUB_OUTPUT
       - name: "sum of variable"
         id : sum
         shell: bash
-        run: echo "::set-output name=sum::$((${{ inputs.number1 }}+${{ inputs.number2 }}))"
+        #run: echo "::set-output name=sum::$((${{ inputs.number1 }}+${{ inputs.number2 }}))"
+        run: echo "{sum}=$((${{ inputs.number1 }}+${{ inputs.number2 }})) >> $GITHUB_OUTPUT"
 
-      - name: "display"
-        run: echo "Ths sum of ${{inputs.number1}} and ${{inputs.number2}} is ${{ steps.sum.outputs.sum }}"
+    #  - name: "display"
+    #    run: echo "Ths sum of ${{inputs.number1}} and ${{inputs.number2}} is ${{ steps.sum.outputs.sum }}"
