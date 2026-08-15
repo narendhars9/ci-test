@@ -30,3 +30,6 @@ jobs:
         run: echo "$Greetings is using $cloud and $first_Name"
         env:
           first_name: Narendhar
+
+      - name: "Say step - 2"
+        run: echo "$first_name here"
