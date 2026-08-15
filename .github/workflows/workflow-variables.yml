@@ -31,3 +31,6 @@ jobs:
         env:
           first_name: Narendhar
 
+      - name: "Step -2 "
+        shell: bash
+        run: echo "$first_name check in step-2"
