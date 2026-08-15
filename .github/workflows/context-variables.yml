@@ -29,8 +29,8 @@ jobs:
         shell: bash
         run: |
           echo " Hi $first_Name $Greetings we are using $cloud and configuration variable project id is ${{vars.PROJECT_ID}}"
-          echo " Github repository level context variables "
-          echo " Github repository ${{github.repository}} "
-          echo " Repository owner ${{github.repository_owner}} "
-          echo " workflow name ${{github.workflow}} "
-          echo " Triggered by ${{github.triggering_actor}} "
+          echo " Github repository level context variables"
+          echo " Github repository ${{github.repository}}"
+          echo " Repository owner ${{github.repository_owner}}"
+          echo " workflow name ${{github.workflow}}"
+          echo " Triggered by ${{github.triggering_actor}}"
