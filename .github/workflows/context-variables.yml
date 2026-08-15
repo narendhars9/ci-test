@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Configuration variables
+name: Context variables
 
 on:
  workflow_dispatch:
@@ -15,7 +15,7 @@ env:
   cloud: google.com
 
 jobs:
-  config-variables:
+  test-context-variables:
     #runs-on: ubuntu-latest
     runs-on: ${{ matrix.os }}
     strategy: 
@@ -25,8 +25,12 @@ jobs:
       Greetings: Hello
 
     steps:
-      - name: "Checking config variables"
+      - name: "checking context variables"
         shell: bash
-        run: echo " Hi $first_Name $Greetings we are using $cloud and configuration variable project id is ${{vars.PROJECT_ID}}"
-        env:
-          first_name: Narendhar
+        run: |
+          echo " Hi $first_Name $Greetings we are using $cloud and configuration variable project id is ${{vars.PROJECT_ID}}"
+          echo " Github repository level context variables "
+          echo " Github repository ${{github.repository}} "
+          echo " Repository owner ${{github.repository_owner}} "
+          echo " workflow name ${{github.workflow}} "
+          echo " "Triggered by ${{github.triggering_actor}} "
