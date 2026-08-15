@@ -1,0 +1,42 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: UserInput variables
+
+on:
+ workflow_dispatch:
+
+  inputs:
+    number1:
+      description: 'First Number'
+      default: '0'
+      required: true
+
+    number2:
+      description: 'Second Number'
+      default: '0'
+      required: true
+
+
+
+jobs:
+  user-input-variables:
+    #runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy: 
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - name: "sum of variable"
+        id : sum
+        shell: bash
+        run: echo "::set-output name=sum::$((${{ inputs.number1 }}+${{ inputs.number2 }}))"
+
+      - name: "display"
+        run: echo "Ths sum of ${{inputs.number1}} and ${{inputs.number2}} is ${{ steps.sum.outputs.sum }}"
