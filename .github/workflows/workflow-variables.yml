@@ -26,4 +26,6 @@ jobs:
 
     steps:
       - name: "Say Hello to Everyone"
-        run: echo "$Greetings is using $cloud"
+        run: echo "$Greetings is using $cloud and $first_Name"
+        env:
+          first_name: Narendhar
